@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QEM — Queen's University Emerging Markets Club</title>
+<meta name="description" content="Queen's University Emerging Markets Club (QEM) is a student-run investment club at Smith School of Business running a ~$20,000 long/short and FX portfolio focused on emerging markets equities and currencies.">
+<meta name="author" content="Queen's University Emerging Markets Club">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://queensem.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Queen's University Emerging Markets Club">
+<meta property="og:title" content="QEM — Queen's University Emerging Markets Club">
+<meta property="og:description" content="A student-run investment club at Queen's University running a ~$20,000 long/short and FX portfolio focused on emerging markets.">
+<meta property="og:url" content="https://queensem.com/">
+<meta property="og:image" content="https://queensem.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="QEM — Queen's University Emerging Markets Club. Long/short and FX, ~$20,000 student-managed portfolio.">
+<meta property="og:locale" content="en_CA">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QEM — Queen's University Emerging Markets Club">
+<meta name="twitter:description" content="A student-run investment club at Queen's University running a ~$20,000 long/short and FX portfolio focused on emerging markets.">
+<meta name="twitter:image" content="https://queensem.com/og-image.png">
+<meta name="twitter:image:alt" content="QEM — Queen's University Emerging Markets Club">
+
+<link rel="icon" type="image/png" href="qem-logo.png">
+<link rel="apple-touch-icon" href="qem-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Queen's University Emerging Markets Club",
+  "alternateName": "QEM",
+  "url": "https://queensem.com/",
+  "logo": "https://queensem.com/qem-logo.png",
+  "image": "https://queensem.com/og-image.png",
+  "description": "A student-run investment club at Queen's University running a ~$20,000 long/short and FX portfolio focused on emerging markets equities and currencies.",
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "Queen's University",
+    "department": "Smith School of Business"
+  },
+  "location": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kingston",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    }
+  }
+}
+</script>
+<style>
+  :root {
+    --black: #0a0a0a;
+    --ink: #1a1a1a;
+    --grey-900: #2a2a2a;
+    --grey-700: #555;
+    --grey-500: #888;
+    --grey-300: #d4d4d4;
+    --grey-100: #f2f2f2;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--ink);
+    font-family: 'EB Garamond', Garamond, serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--grey-300);
+    z-index: 100;
+    padding: 16px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--black);
+  }
+
+  .brand img {
+    height: 50px;
+    width: auto;
+  }
+
+  .nav-tabs {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .nav-tabs button {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--grey-700);
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: color 0.25s ease, background 0.25s ease;
+    border-radius: 2px;
+  }
+
+  .nav-tabs button:hover {
+    color: var(--black);
+  }
+
+  .nav-tabs button.active {
+    color: var(--white);
+    background: var(--black);
+  }
+
+  /* ============ MAIN AREA ============ */
+  main {
+    padding-top: 82px;
+    min-height: 100vh;
+  }
+
+  .panel {
+    display: none;
+    animation: fade 0.4s ease;
+  }
+
+  .panel.active {
+    display: block;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============ ABOUT PANEL ============ */
+  .about-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 120px 56px 140px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--grey-500);
+  }
+
+  h1.display {
+    font-size: clamp(46px, 6.5vw, 88px);
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 44px;
+  }
+
+  h1.display .accent {
+    color: var(--grey-500);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .about-lead {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--grey-900);
+    max-width: 700px;
+    margin-bottom: 64px;
+  }
+
+  .about-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--grey-300);
+    border-bottom: 1px solid var(--grey-300);
+  }
+
+  .meta-cell {
+    padding: 32px 0;
+    border-right: 1px solid var(--grey-300);
+    padding-right: 24px;
+  }
+
+  .meta-cell:last-child {
+    border-right: none;
+  }
+
+  .meta-cell:not(:first-child) {
+    padding-left: 24px;
+  }
+
+  .meta-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+    margin-bottom: 10px;
+  }
+
+  .meta-value {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--black);
+    line-height: 1.4;
+  }
+
+  /* ============ EMPTY STATE PANELS ============ */
+  .empty {
+    min-height: calc(100vh - 82px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 56px;
+    text-align: center;
+  }
+
+  .empty-eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+    margin-bottom: 28px;
+  }
+
+  .empty h2 {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 24px;
+  }
+
+  .empty p {
+    font-size: 19px;
+    color: var(--grey-700);
+    max-width: 500px;
+    line-height: 1.55;
+    margin-bottom: 40px;
+  }
+
+  .empty-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--grey-300);
+    margin: 0 0 32px 0;
+  }
+
+  .empty-tag {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid var(--grey-300);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid var(--grey-300);
+    padding: 32px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--grey-500);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  footer span:last-child {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 768px) {
+    nav {
+      padding: 14px 24px;
+      flex-direction: column;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    main { padding-top: 142px; }
+    .nav-tabs { gap: 4px; }
+    .nav-tabs button { padding: 8px 14px; font-size: 13px; }
+    .brand img { height: 42px; }
+    .about-wrap { padding: 64px 24px 80px; }
+    .about-meta { grid-template-columns: 1fr; }
+    .meta-cell {
+      border-right: none;
+      border-bottom: 1px solid var(--grey-300);
+      padding: 24px 0 !important;
+    }
+    .meta-cell:last-child { border-bottom: none; }
+    .empty { padding: 60px 24px; }
+    footer {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      padding: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="brand" onclick="showPanel('about'); return false;">
+    <img src="qem-logo.png" alt="QEM — Queen's University Emerging Markets Club">
+  </a>
+  <ul class="nav-tabs">
+    <li><button data-panel="about" class="active">About</button></li>
+    <li><button data-panel="portfolio">Portfolio</button></li>
+    <li><button data-panel="pitches">Pitches</button></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ABOUT -->
+  <section class="panel active" id="panel-about">
+    <div class="about-wrap">
+      <div class="eyebrow">About</div>
+      <h1 class="display">
+        Equities Focused<br>
+        <span class="accent">Emerging Markets Club</span>
+      </h1>
+      <p class="about-lead">
+        QEM is a Queen's University investment club focused on the emerging markets. We run a long/short and FX portfolio of approximately $20,000, building research-driven theses on equities and currencies across the world's fast-growing economies.
+      </p>
+
+      <div class="about-meta">
+        <div class="meta-cell">
+          <div class="meta-label">University</div>
+          <div class="meta-value">Queen's University<br>Kingston, ON</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Mandate</div>
+          <div class="meta-value">Long / Short &amp; FX<br>Emerging markets</div>
+        </div>
+        <div class="meta-cell">
+          <div class="meta-label">Portfolio</div>
+          <div class="meta-value">~ $20,000<br>Student-managed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="panel" id="panel-portfolio">
+    <div class="empty">
+      <div class="empty-eyebrow">Portfolio</div>
+      <h2>Coming soon.</h2>
+      <div class="empty-divider"></div>
+      <p>Our active long, short, and FX positions will be published here once the book is live.</p>
+      <span class="empty-tag">In Development</span>
+    </div>
+  </section>
+
+  <!-- PITCHES -->
+  <section class="panel" id="panel-pitches">
+    <div class="empty">
+      <div class="empty-eyebrow">Pitches</div>
+      <h2>Coming soon.</h2>
+      <div class="empty-divider"></div>
+      <p>Initiation reports and stock pitches from our analysts will be archived here.</p>
+      <span class="empty-tag">In Development</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Queen's Emerging Markets Club</span>
+  <span>Smith School of Business · Queen's University</span>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.nav-tabs button');
+  const panels = document.querySelectorAll('.panel');
+
+  function showPanel(name) {
+    buttons.forEach(b => b.classList.toggle('active', b.dataset.panel === name));
+    panels.forEach(p => p.classList.toggle('active', p.id === 'panel-' + name));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => showPanel(btn.dataset.panel));
+  });
+</script>
+
+</body>
+</html>
