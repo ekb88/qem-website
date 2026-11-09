@@ -413,6 +413,89 @@
     letter-spacing: 0.02em;
   }
 
+  /* ============ PITCHES PANEL ============ */
+  .pitches-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 100px 56px 120px;
+  }
+
+  .pitches-title {
+    font-size: clamp(40px, 5.5vw, 72px);
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 36px;
+  }
+
+  .pitches-title .accent {
+    color: var(--grey-500);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .pitches-sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--grey-700);
+    max-width: 680px;
+    margin-bottom: 72px;
+  }
+
+  .pitch-list {
+    border-top: 1px solid var(--grey-300);
+  }
+
+  .pitch-card {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 32px;
+    align-items: center;
+    padding: 28px 8px;
+    border-bottom: 1px solid var(--grey-300);
+    text-decoration: none;
+    color: inherit;
+    transition: padding 0.25s ease, background 0.25s ease;
+  }
+
+  .pitch-card:hover {
+    padding-left: 20px;
+    background: var(--grey-100);
+  }
+
+  .pitch-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+  }
+
+  .pitch-title {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--black);
+  }
+
+  .pitch-meta {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--grey-700);
+    margin-top: 6px;
+  }
+
+  .pitch-action {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--grey-700);
+    white-space: nowrap;
+  }
+
   /* ============ FOOTER ============ */
   footer {
     border-top: 1px solid var(--grey-300);
@@ -463,6 +546,15 @@
     .pod-name { font-size: 24px; }
     .pod-grid { grid-template-columns: 1fr; }
     .tv-widget { height: 180px; }
+    .pitches-wrap { padding: 56px 24px 72px; }
+    .pitch-card {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 22px 0;
+    }
+    .pitch-card:hover { padding-left: 0; }
+    .pitch-title { font-size: 22px; }
+    .pitch-action { justify-self: start; margin-top: 4px; }
     footer {
       flex-direction: column;
       gap: 8px;
@@ -492,12 +584,9 @@
   <section class="panel active" id="panel-about">
     <div class="about-wrap">
       <div class="eyebrow">About</div>
-      <h1 class="display">
-        Equities Focused<br>
-        <span class="accent">Emerging Markets Club</span>
-      </h1>
+      <h1 class="display">Queen's Emerging Markets.</h1>
       <p class="about-lead">
-        QEM is a Queen's University investment club focused on the emerging markets. We run a long/short and FX portfolio of approximately $20,000, building research-driven theses on equities and currencies across the world's fast-growing economies.
+        A student-run investment club at Queen's. We manage a ~$20,000 long/short and FX book across emerging markets, split into five regional pods: C&amp;SEA, India, Latin America, MENA + Africa, and Alternatives.
       </p>
 
       <div class="about-meta">
@@ -521,11 +610,8 @@
   <section class="panel" id="panel-markets">
     <div class="markets-wrap">
       <div class="eyebrow">Markets</div>
-      <h1 class="markets-title">
-        Five portfolios.<br>
-        <span class="accent">Live indexes.</span>
-      </h1>
-      <p class="markets-sub">Real-time index levels tracked by each pod, updated during local market hours. Values reflect last close when markets are not in session.</p>
+      <h1 class="markets-title">Markets.</h1>
+      <p class="markets-sub">The indexes each pod watches. Live during trading hours; last close shown otherwise.</p>
 
       <article class="pod-card">
         <header class="pod-header">
@@ -710,12 +796,21 @@
 
   <!-- PITCHES -->
   <section class="panel" id="panel-pitches">
-    <div class="empty">
-      <div class="empty-eyebrow">Pitches</div>
-      <h2>Coming soon.</h2>
-      <div class="empty-divider"></div>
-      <p>Initiation reports and stock pitches from our analysts will be archived here.</p>
-      <span class="empty-tag">In Development</span>
+    <div class="pitches-wrap">
+      <div class="eyebrow">Pitches</div>
+      <h1 class="pitches-title">Pitches.</h1>
+      <p class="pitches-sub">Long and short write-ups from our analysts. Click any to open the PDF.</p>
+
+      <div class="pitch-list">
+        <a class="pitch-card" href="pitches/2026-11-08-kospi.pdf" target="_blank" rel="noopener">
+          <div class="pitch-tag">C&amp;SEA</div>
+          <div class="pitch-main">
+            <h2 class="pitch-title">KOSPI</h2>
+            <div class="pitch-meta">November 8, 2026</div>
+          </div>
+          <div class="pitch-action">View PDF&nbsp;→</div>
+        </a>
+      </div>
     </div>
   </section>
 
