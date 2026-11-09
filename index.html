@@ -223,42 +223,55 @@
     margin-bottom: 64px;
   }
 
-  .about-meta {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
+  .pods-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     border-top: 1px solid var(--grey-300);
+  }
+
+  .pod-row {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 36px;
+    align-items: start;
+    padding: 40px 8px;
     border-bottom: 1px solid var(--grey-300);
+    transition: padding 0.3s ease, background 0.3s ease;
   }
 
-  .meta-cell {
-    padding: 32px 0;
-    border-right: 1px solid var(--grey-300);
-    padding-right: 24px;
-  }
-
-  .meta-cell:last-child {
-    border-right: none;
-  }
-
-  .meta-cell:not(:first-child) {
+  .pod-row:hover {
     padding-left: 24px;
+    background: var(--grey-100);
   }
 
-  .meta-label {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+  .pod-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
     color: var(--grey-500);
+    letter-spacing: 0.08em;
+    padding-top: 12px;
+  }
+
+  .pod-region-name {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-size: clamp(26px, 3.2vw, 36px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--black);
     margin-bottom: 10px;
   }
 
-  .meta-value {
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--black);
-    line-height: 1.4;
+  .pod-descriptor {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--grey-700);
+    line-height: 1.55;
+    max-width: 560px;
   }
 
   /* ============ EMPTY STATE PANELS ============ */
@@ -539,13 +552,15 @@
     .nav-tabs button { padding: 8px 14px; font-size: 13px; }
     .brand img { height: 42px; }
     .about-wrap { padding: 64px 24px 80px; }
-    .about-meta { grid-template-columns: 1fr; }
-    .meta-cell {
-      border-right: none;
-      border-bottom: 1px solid var(--grey-300);
-      padding: 24px 0 !important;
+    .pod-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 28px 0;
     }
-    .meta-cell:last-child { border-bottom: none; }
+    .pod-row:hover { padding-left: 0; }
+    .pod-num { padding-top: 0; font-size: 13px; }
+    .pod-region-name { font-size: 24px; }
+    .pod-descriptor { font-size: 15px; }
     .empty { padding: 60px 24px; }
     .markets-wrap { padding: 56px 24px 72px; }
     .pod-card { padding: 22px 22px 20px; }
@@ -597,23 +612,46 @@
       <div class="eyebrow">About</div>
       <h1 class="display">Queen's Emerging Markets.</h1>
       <p class="about-lead">
-        A student-run investment club at Queen's. We manage a ~$20,000 long/short and FX book across emerging markets, split into five regional pods: C&amp;SEA, India, Latin America, MENA + Africa, and Alternatives.
+        We manage a ~$20,000 long/short portfolio across five distinct sectors of the emerging markets.
       </p>
 
-      <div class="about-meta">
-        <div class="meta-cell">
-          <div class="meta-label">University</div>
-          <div class="meta-value">Queen's University<br>Kingston, ON</div>
-        </div>
-        <div class="meta-cell">
-          <div class="meta-label">Mandate</div>
-          <div class="meta-value">Long / Short &amp; FX<br>Emerging markets</div>
-        </div>
-        <div class="meta-cell">
-          <div class="meta-label">Portfolio</div>
-          <div class="meta-value">~ $20,000<br>Student-managed</div>
-        </div>
-      </div>
+      <ol class="pods-list">
+        <li class="pod-row">
+          <div class="pod-num">01</div>
+          <div class="pod-body">
+            <h3 class="pod-region-name">China &amp; Southeast Asia</h3>
+            <p class="pod-descriptor">Hong Kong &middot; Singapore. Tencent, Meituan, regional banks and REITs.</p>
+          </div>
+        </li>
+        <li class="pod-row">
+          <div class="pod-num">02</div>
+          <div class="pod-body">
+            <h3 class="pod-region-name">India</h3>
+            <p class="pod-descriptor">NSE &middot; BSE. Infrastructure, financials, large-cap tech.</p>
+          </div>
+        </li>
+        <li class="pod-row">
+          <div class="pod-num">03</div>
+          <div class="pod-body">
+            <h3 class="pod-region-name">Latin America</h3>
+            <p class="pod-descriptor">Brazil &middot; Mexico. Banks, commodities, near-shoring plays.</p>
+          </div>
+        </li>
+        <li class="pod-row">
+          <div class="pod-num">04</div>
+          <div class="pod-body">
+            <h3 class="pod-region-name">MENA + Africa</h3>
+            <p class="pod-descriptor">UAE &middot; Saudi Arabia &middot; South Africa. Energy, miners, financials.</p>
+          </div>
+        </li>
+        <li class="pod-row">
+          <div class="pod-num">05</div>
+          <div class="pod-body">
+            <h3 class="pod-region-name">Alternatives</h3>
+            <p class="pod-descriptor">Prediction markets, Bitcoin, commodities, volatility plays.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
