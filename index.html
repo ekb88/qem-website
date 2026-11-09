@@ -174,10 +174,54 @@
   }
 
   /* ============ ABOUT PANEL ============ */
+  .about-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+    color: var(--white);
+  }
+
+  .about-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('images/toronto-hero.webp');
+    background-size: cover;
+    background-position: center 35%;
+    filter: grayscale(100%) brightness(0.55) contrast(1.05);
+    z-index: 0;
+  }
+
+  .about-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 140px 56px 120px;
+  }
+
+  .about-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .about-hero .eyebrow::before {
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .about-hero h1.display {
+    color: var(--white);
+    margin-bottom: 36px;
+  }
+
+  .about-hero .about-lead {
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 0;
+  }
+
   .about-wrap {
     max-width: 980px;
     margin: 0 auto;
-    padding: 120px 56px 140px;
+    padding: 72px 56px 140px;
   }
 
   .eyebrow {
@@ -556,7 +600,8 @@
     .nav-tabs { gap: 4px; }
     .nav-tabs button { padding: 8px 14px; font-size: 13px; }
     .brand img { height: 42px; }
-    .about-wrap { padding: 64px 24px 80px; }
+    .about-hero-inner { padding: 96px 24px 72px; }
+    .about-wrap { padding: 48px 24px 80px; }
     .pod-row {
       grid-template-columns: 32px 60px 1fr;
       gap: 14px;
@@ -613,13 +658,16 @@
 
   <!-- ABOUT -->
   <section class="panel active" id="panel-about">
+    <div class="about-hero">
+      <div class="about-hero-inner">
+        <div class="eyebrow">About</div>
+        <h1 class="display">Queen's Emerging Markets.</h1>
+        <p class="about-lead">
+          We manage a ~$20,000 long/short portfolio across five distinct sectors of the emerging markets.
+        </p>
+      </div>
+    </div>
     <div class="about-wrap">
-      <div class="eyebrow">About</div>
-      <h1 class="display">Queen's Emerging Markets.</h1>
-      <p class="about-lead">
-        We manage a ~$20,000 long/short portfolio across five distinct sectors of the emerging markets.
-      </p>
-
       <ol class="pods-list">
         <li class="pod-row">
           <div class="pod-num">01</div>
