@@ -290,11 +290,18 @@
     padding: 36px 8px;
     border-bottom: 1px solid var(--grey-300);
     transition: padding 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    outline: none;
   }
 
-  .pod-row:hover {
+  .pod-row:hover,
+  .pod-row:focus-visible {
     padding-left: 24px;
     background: var(--grey-100);
+  }
+
+  .pod-row:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--ink);
   }
 
   .pod-num {
@@ -524,33 +531,53 @@
     margin-bottom: 72px;
   }
 
+  .pitch-section {
+    margin-bottom: 56px;
+  }
+
+  .pitch-section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--grey-700);
+    letter-spacing: -0.01em;
+    padding-bottom: 14px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--grey-300);
+  }
+
+  .pitch-empty {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--grey-500);
+    padding: 22px 8px;
+    border-bottom: 1px solid var(--grey-300);
+  }
+
   .pitch-list {
-    border-top: 1px solid var(--grey-300);
+    border-bottom: 1px solid var(--grey-300);
   }
 
   .pitch-card {
     display: grid;
-    grid-template-columns: 120px 1fr auto;
+    grid-template-columns: 1fr auto;
     gap: 32px;
     align-items: center;
-    padding: 28px 8px;
-    border-bottom: 1px solid var(--grey-300);
+    padding: 24px 8px;
+    border-top: 1px solid var(--grey-300);
     text-decoration: none;
     color: inherit;
     transition: padding 0.25s ease, background 0.25s ease;
   }
 
+  .pitch-list .pitch-card:first-child {
+    border-top: none;
+  }
+
   .pitch-card:hover {
     padding-left: 20px;
     background: var(--grey-100);
-  }
-
-  .pitch-tag {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--grey-500);
   }
 
   .pitch-title {
@@ -677,35 +704,35 @@
     </div>
     <div class="about-wrap">
       <ol class="pods-list">
-        <li class="pod-row">
+        <li class="pod-row" data-pod="csea" tabindex="0" role="link" aria-label="View C&amp;SEA pitches">
           <div class="pod-num">01</div>
           <div class="pod-map">
             <img src="images/china-sea.png" alt="China &amp; Southeast Asia silhouette" loading="lazy">
           </div>
           <h3 class="pod-region-name">China &amp; Southeast Asia</h3>
         </li>
-        <li class="pod-row">
+        <li class="pod-row" data-pod="india" tabindex="0" role="link" aria-label="View India pitches">
           <div class="pod-num">02</div>
           <div class="pod-map">
             <img src="images/india.png" alt="India silhouette" loading="lazy">
           </div>
           <h3 class="pod-region-name">India</h3>
         </li>
-        <li class="pod-row">
+        <li class="pod-row" data-pod="latam" tabindex="0" role="link" aria-label="View Latin America pitches">
           <div class="pod-num">03</div>
           <div class="pod-map">
             <img src="images/latin-america.png" alt="Latin America silhouette" loading="lazy">
           </div>
           <h3 class="pod-region-name">Latin America</h3>
         </li>
-        <li class="pod-row">
+        <li class="pod-row" data-pod="mena" tabindex="0" role="link" aria-label="View MENA pitches">
           <div class="pod-num">04</div>
           <div class="pod-map">
             <img src="images/mena-africa.png" alt="MENA silhouette" loading="lazy">
           </div>
           <h3 class="pod-region-name">MENA</h3>
         </li>
-        <li class="pod-row">
+        <li class="pod-row" data-pod="alts" tabindex="0" role="link" aria-label="View Alternatives pitches">
           <div class="pod-num">05</div>
           <div class="pod-map">
             <img src="images/bitcoin.png" alt="Bitcoin" loading="lazy">
@@ -909,17 +936,39 @@
     <div class="pitches-wrap">
       <div class="eyebrow">Pitches</div>
       <h1 class="pitches-title">Pitches.</h1>
-      <p class="pitches-sub">Long and short write-ups from our analysts. Click any to open the PDF.</p>
+      <p class="pitches-sub">Long and short write-ups from our analysts, grouped by pod.</p>
 
-      <div class="pitch-list">
-        <a class="pitch-card" href="pitches/2026-11-08-kospi.pdf" target="_blank" rel="noopener">
-          <div class="pitch-tag">C&amp;SEA</div>
-          <div class="pitch-main">
-            <h2 class="pitch-title">KOSPI</h2>
-            <div class="pitch-meta">November 8, 2026</div>
-          </div>
-          <div class="pitch-action">View PDF&nbsp;→</div>
-        </a>
+      <div class="pitch-section" id="pitches-csea">
+        <h2 class="pitch-section-title">China &amp; Southeast Asia</h2>
+        <div class="pitch-list">
+          <a class="pitch-card" href="pitches/2026-11-08-kospi.pdf" target="_blank" rel="noopener">
+            <div class="pitch-main">
+              <h3 class="pitch-title">KOSPI</h3>
+              <div class="pitch-meta">November 8, 2026</div>
+            </div>
+            <div class="pitch-action">View PDF&nbsp;→</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="pitch-section" id="pitches-india">
+        <h2 class="pitch-section-title">India</h2>
+        <div class="pitch-empty">No pitches published yet.</div>
+      </div>
+
+      <div class="pitch-section" id="pitches-latam">
+        <h2 class="pitch-section-title">Latin America</h2>
+        <div class="pitch-empty">No pitches published yet.</div>
+      </div>
+
+      <div class="pitch-section" id="pitches-mena">
+        <h2 class="pitch-section-title">MENA</h2>
+        <div class="pitch-empty">No pitches published yet.</div>
+      </div>
+
+      <div class="pitch-section" id="pitches-alts">
+        <h2 class="pitch-section-title">Alternatives</h2>
+        <div class="pitch-empty">No pitches published yet.</div>
       </div>
     </div>
   </section>
@@ -943,6 +992,26 @@
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => showPanel(btn.dataset.panel));
+  });
+
+  function goToPodPitches(pod) {
+    showPanel('pitches');
+    setTimeout(() => {
+      const target = document.getElementById('pitches-' + pod);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 150);
+  }
+
+  document.querySelectorAll('.pod-row[data-pod]').forEach(row => {
+    row.addEventListener('click', () => goToPodPitches(row.dataset.pod));
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        goToPodPitches(row.dataset.pod);
+      }
+    });
   });
 </script>
 
