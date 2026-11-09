@@ -260,21 +260,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--ink);
   }
 
-  .pod-map svg {
-    width: 100%;
-    height: 100%;
+  .pod-map img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     display: block;
-  }
-
-  .pod-map-alt .btc {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 68px;
-    font-weight: 700;
-    line-height: 1;
-    color: var(--ink);
   }
 
   .pod-region-name {
@@ -573,7 +565,6 @@
     .pod-row:hover { padding-left: 0; }
     .pod-num { font-size: 13px; }
     .pod-map { width: 60px; height: 50px; }
-    .pod-map-alt .btc { font-size: 42px; }
     .pod-region-name { font-size: 22px; }
     .empty { padding: 60px 24px; }
     .markets-wrap { padding: 56px 24px 72px; }
@@ -633,48 +624,35 @@
         <li class="pod-row">
           <div class="pod-num">01</div>
           <div class="pod-map">
-            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
-              <path d="M8,32 L20,22 L32,18 L48,16 L62,15 L78,17 L92,22 L104,30 L108,40 L102,46 L92,50 L80,52 L68,50 L56,49 L44,51 L34,50 L22,46 L12,40 Z"/>
-              <path d="M62,51 L66,60 L68,70 L65,76 L60,74 L58,65 L58,54 Z"/>
-              <path d="M66,76 L74,78 L82,78 L88,72 L82,70 L72,72 Z"/>
-            </svg>
+            <img src="images/china-sea.png" alt="China &amp; Southeast Asia silhouette" loading="lazy">
           </div>
           <h3 class="pod-region-name">China &amp; Southeast Asia</h3>
         </li>
         <li class="pod-row">
           <div class="pod-num">02</div>
           <div class="pod-map">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
-              <path d="M18,16 L32,10 L50,8 L65,10 L78,14 L82,22 L76,32 L70,42 L62,52 L54,62 L48,72 L44,82 L40,72 L36,60 L30,48 L24,36 L18,26 Z"/>
-              <ellipse cx="50" cy="92" rx="3.5" ry="4.5"/>
-            </svg>
+            <img src="images/india.png" alt="India silhouette" loading="lazy">
           </div>
           <h3 class="pod-region-name">India</h3>
         </li>
         <li class="pod-row">
           <div class="pod-num">03</div>
           <div class="pod-map">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
-              <path d="M32,12 L48,8 L62,10 L72,14 L80,22 L84,32 L84,42 L78,52 L72,62 L66,72 L60,80 L54,88 L50,94 L46,88 L42,76 L38,62 L32,46 L28,32 L28,20 Z"/>
-            </svg>
+            <img src="images/latin-america.jpg" alt="Latin America silhouette" loading="lazy">
           </div>
           <h3 class="pod-region-name">Latin America</h3>
         </li>
         <li class="pod-row">
           <div class="pod-num">04</div>
           <div class="pod-map">
-            <svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
-              <path d="M22,20 L35,12 L48,10 L62,12 L72,16 L74,24 L72,32 L70,40 L74,48 L70,56 L64,64 L56,72 L48,78 L42,82 L36,76 L32,66 L28,54 L24,42 L20,30 Z"/>
-              <path d="M18,32 L12,40 L14,46 L22,44 Z"/>
-              <path d="M72,16 L86,18 L96,24 L102,32 L106,42 L100,46 L92,42 L82,36 L74,30 Z"/>
-            </svg>
+            <img src="images/mena-africa.webp" alt="MENA and Africa silhouette" loading="lazy">
           </div>
           <h3 class="pod-region-name">MENA + Africa</h3>
         </li>
         <li class="pod-row">
           <div class="pod-num">05</div>
-          <div class="pod-map pod-map-alt">
-            <span class="btc">&#8383;</span>
+          <div class="pod-map">
+            <img src="images/bitcoin.png" alt="Bitcoin" loading="lazy">
           </div>
           <h3 class="pod-region-name">Alternatives</h3>
         </li>
