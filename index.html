@@ -32,7 +32,7 @@
 <link rel="apple-touch-icon" href="qem-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -78,11 +78,22 @@
   body {
     background: var(--white);
     color: var(--ink);
-    font-family: 'EB Garamond', Garamond, serif;
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
     font-weight: 400;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3,
+  .display, .markets-title, .pitches-title,
+  .pod-name, .pitch-title, .empty h2,
+  .brand, nav .nav-tabs button {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  }
+
+  nav .nav-tabs button {
+    font-family: 'Lora', Georgia, serif;
   }
 
   /* ============ NAV ============ */
